@@ -1,6 +1,6 @@
 import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
-import App from '../App'
+import MainView from './Main/MainView'
 
 class ApplicationView extends Component {
 
@@ -8,11 +8,11 @@ class ApplicationView extends Component {
     return (
       <React.Fragment>
         <Route exact path="/" render={(props) => {
-          return <App />
+          return <MainView />
         }} />
       </React.Fragment>
     )
   }
 }
 
-export default ApplicationViews
+export default ApplicationView
