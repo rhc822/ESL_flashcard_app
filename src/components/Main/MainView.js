@@ -1,20 +1,51 @@
 import React, { Component } from 'react'
+import AppData from '../../modules/AppData'
+import FlashcardList from '../flashcard/FlashcardList'
 
 
 class MainView extends Component {
-    render() {
-        return (
-            <div>
-                <h2>Student Kennels<br />
-                    <small>Loving care when you're not there.</small>
-                </h2>
-                <address>
-                    Visit Us at the Nashville North Location
-                    <br />500 Puppy Way
-                </address>
-            </div>
-        );
-    }
+
+/* <AnimalCard
+              key={animal.id}
+              animal={animal}
+              deleteAnimal={this.deleteAnimal}
+              {...this.props}
+            /> */
+
+
+                /* <div>
+                    <FlashcardList />
+                </div> */
+
+    state = {
+        category: [],
+      }
+
+      componentDidMount() {
+        AppData.getAllCategory()
+          .then((AppDataCategoryArray) => {
+            this.setState({
+              category: AppDataCategoryArray
+            })
+          })
+      }
+
+
+  render() {
+    console.log(this.state)
+    return (
+      <React.Fragment>
+        <div className="container-category">
+          {this.state.category.map(eachCategory =>
+            <section>
+                <h1>{eachCategory.name}</h1>
+
+            </section>
+            )}
+        </div>
+      </React.Fragment>
+    )
+  }
 }
 
 export default MainView

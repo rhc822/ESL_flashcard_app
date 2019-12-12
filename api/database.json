@@ -1,19 +1,78 @@
 {
-  "posts": [
+  "user": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "email": "email",
+      "password": "password",
+      "name": "John",
+      "language": "English"
+    },
+    {
+      "id": 2,
+      "email": "email2",
+      "password": "password2",
+      "name": "Jane",
+      "language": "English"
     }
   ],
-  "comments": [
+  "flashcard": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "userId": 1,
+      "word": "apple",
+      "sentence": "Apples are good.",
+      "url": "www.apples.com",
+      "categoryId": 1,
+      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider."
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "word": "orange",
+      "sentence": "Oranges are good too.",
+      "url": "www.oranges.com",
+      "categoryId": 1,
+      "definition": "a round juicy citrus fruit with a tough bright reddish-yellow rind."
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "word": "vehicle",
+      "sentence": "Everyone in America needs a vehicle.",
+      "url": "www.cars.com",
+      "categoryId": 2,
+      "definition": "a thing used for transporting people or goods, especially on land, such as a car, truck, or cart."
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "word": "yacht",
+      "sentence": "Only the rich have yachts.",
+      "url": "www.yachts.com",
+      "categoryId": 2,
+      "definition": "a medium-sized sailboat equipped for cruising or racing."
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "category": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "food"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "name": "transportation"
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "name": "food"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "name": "transportation"
+    }
+  ]
 }
