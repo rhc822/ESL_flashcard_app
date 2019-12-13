@@ -3,7 +3,6 @@ import Flashcard from './Flashcard'
 import AppData from '../../modules/AppData'
 
 class FlashcardList extends Component {
-  //define what this component needs to render
   state = {
     flashcard: [],
 
@@ -20,9 +19,10 @@ class FlashcardList extends Component {
       })
   }
 
+  /* This section maps through the flashcard list and builds each flashcard with the flashcard  */
 
   render() {
-    console.log(this.state)
+    console.log("flashcardlist.js state stuff", this.state)
     return (
       <div className="container-cards">
         {this.state.flashcard.map(eachFlashcard =>
@@ -30,6 +30,7 @@ class FlashcardList extends Component {
                 key={eachFlashcard.id}
                 userId={eachFlashcard.userId}
                 word={eachFlashcard.word}
+                id={eachFlashcard.id}
             />
         )}
       </div>

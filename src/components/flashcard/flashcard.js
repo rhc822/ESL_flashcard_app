@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import './Flashcard.css'
+
 
 class Flashcard extends Component {
   render() {
-    return (
-      <div className="card">
+    console.log("flashcard.js props", this.props)
+      return (
+    <div className="card">
         <div className="card-content">
-          <p>{this.props.word}</p>
+          <input type="checkbox" name={`flashcard${this.props.id}`} value=""></input>
+          <span>{this.props.word}</span>
         </div>
       </div>
     );
