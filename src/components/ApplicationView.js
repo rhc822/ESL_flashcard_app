@@ -2,6 +2,8 @@ import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import MainView from './Main/MainView'
 
+/* Contains the routes for various "webpage" links */
+
 class ApplicationView extends Component {
 
   render() {
