@@ -13,9 +13,6 @@ class MainView extends Component {
             /> */
 
 
-                /* <div>
-                    <FlashcardList />
-                </div> */
 
     state = {
         category: [],
@@ -37,9 +34,11 @@ class MainView extends Component {
       <React.Fragment>
         <div className="container-category">
           {this.state.category.map(eachCategory =>
-            <section>
+            <section key={eachCategory.id}>
                 <h1>{eachCategory.name}</h1>
-
+                <div>
+                    <FlashcardList categoryId={eachCategory.id}/>
+                </div>
             </section>
             )}
         </div>

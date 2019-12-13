@@ -6,11 +6,13 @@ class FlashcardList extends Component {
   //define what this component needs to render
   state = {
     flashcard: [],
+
   }
 
 
+
   componentDidMount() {
-    AppData.getAllFlashcard()
+    AppData.getFlashcard(this.props.categoryId)
       .then((AppDataFlashcardArray) => {
         this.setState({
           flashcard: AppDataFlashcardArray
@@ -20,7 +22,7 @@ class FlashcardList extends Component {
 
 
   render() {
-
+    console.log(this.state)
     return (
       <div className="container-cards">
         {this.state.flashcard.map(eachFlashcard =>

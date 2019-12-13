@@ -5,7 +5,7 @@ class Flashcard extends Component {
     return (
       <div className="card">
         <div className="card-content">
-          <h1>{this.props.flashcard.word}</h1>
+          <p>{this.props.word}</p>
         </div>
       </div>
     );

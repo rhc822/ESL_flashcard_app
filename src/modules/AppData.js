@@ -7,4 +7,7 @@ export default {
   getAllFlashcard() {
     return fetch(`${remoteURL}/flashcard`).then(result => result.json())
   },
+  getFlashcard(id) {
+    return fetch(`${remoteURL}/flashcard?categoryId=${id}`).then(result => result.json())
+  },
 }
