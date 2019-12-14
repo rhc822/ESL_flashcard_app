@@ -22,7 +22,6 @@ class FlashcardList extends Component {
   /* This section maps through the flashcard list and builds each flashcard with the flashcard  */
 
   render() {
-    console.log("flashcardlist.js state stuff", this.state)
     return (
       <div className="container-cards">
         {this.state.flashcard.map(eachFlashcard =>
@@ -31,6 +30,7 @@ class FlashcardList extends Component {
                 userId={eachFlashcard.userId}
                 word={eachFlashcard.word}
                 id={eachFlashcard.id}
+                {...this.props}
             />
         )}
       </div>

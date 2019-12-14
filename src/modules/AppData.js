@@ -10,4 +10,7 @@ export default {
   getFlashcard(id) {
     return fetch(`${remoteURL}/flashcard?categoryId=${id}`).then(result => result.json())
   },
+  getIndividualFlashcard(id) {
+    return fetch(`${remoteURL}/flashcard?id=${id}`).then(result => result.json())
+  },
 }

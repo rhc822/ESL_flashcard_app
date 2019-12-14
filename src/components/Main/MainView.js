@@ -33,7 +33,10 @@ I needed to put the key as an attribute in the section tag because that is only 
             <section key={eachCategory.id}>
                 <h1>{eachCategory.name}</h1>
                 <div>
-                    <FlashcardList categoryId={eachCategory.id}/>
+                    <FlashcardList
+                        categoryId={eachCategory.id}
+                        {...this.props}
+                    />
                 </div>
             </section>
             )}
