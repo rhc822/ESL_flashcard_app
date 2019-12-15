@@ -13,8 +13,10 @@ state = {
 }
 
     componentDidMount() {
+
         AppData.getIndividualFlashcard(this.props.flashcardId)
           .then((flashcardInfo) => {
+            console.log(flashcardInfo)
             this.setState({
               word: flashcardInfo.word,
               sentence: flashcardInfo.sentence,
@@ -25,9 +27,15 @@ state = {
       }
 
   render() {
-    console.log(this.props)
+    console.log("Props of this component", this.props.flashcardId)
+    console.log("State of this componenet", this.state)
       return (
+        <>
           <h1>{this.state.word}</h1>
+          <button>Edit</button>
+          <button>Delete</button>
+          <a href="./FlashcardBack">Flip</a>
+        </>
     );
   }
 }
