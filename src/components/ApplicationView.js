@@ -2,6 +2,7 @@ import { Route } from 'react-router-dom'
 import React, { Component } from 'react'
 import MainView from './Main/MainView'
 import FlashcardFront from './flashcard/FlashcardFront'
+import FlashcardBack from './flashcard/FlashcardBack'
 
 /* Contains the routes for various "webpage" links */
 
@@ -28,6 +29,13 @@ Here's how flashcardId works(\d+):
 
         <Route exact path="/flashcard/:flashcardId(\d+)" render={(props) => {
           return <FlashcardFront
+                    flashcardId={parseInt(props.match.params.flashcardId)}
+                    {...props}
+                    />
+        }} />
+
+        <Route exact path="/flashcard/:flashcardId(\d+)/FlashcardBack" render={(props) => {
+          return <FlashcardBack
                     flashcardId={parseInt(props.match.params.flashcardId)}
                     {...props}
                     />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AppData from '../../modules/AppData'
+import { Link } from "react-router-dom";
 import './Flashcard.css'
 
 
@@ -16,7 +17,6 @@ state = {
 
         AppData.getIndividualFlashcard(this.props.flashcardId)
           .then((flashcardInfo) => {
-            console.log(flashcardInfo)
             this.setState({
               word: flashcardInfo.word,
               sentence: flashcardInfo.sentence,
@@ -27,14 +27,19 @@ state = {
       }
 
   render() {
-    console.log("Props of this component", this.props.flashcardId)
-    console.log("State of this componenet", this.state)
+    console.log(this.state)
       return (
         <>
           <h1>{this.state.word}</h1>
           <button>Edit</button>
           <button>Delete</button>
-          <a href="./FlashcardBack">Flip</a>
+          <Link
+            className="card-flip"
+            to={`/flashcard/${this.props.flashcardId}/FlashcardBack`}
+            word={this.state.word}
+          >
+            Flip
+          </Link>
         </>
     );
   }
