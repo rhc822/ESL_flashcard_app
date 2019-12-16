@@ -12,7 +12,7 @@ class NavBar extends Component {
             <li><Link className="nav-link" to="/flashcard/create">Create Flashcard</Link></li>
             <li>Locations</li>
             <li>Clear checkboxes</li>
-            <li>Category</li>
+            <li><Link className="nav-link" to="/category">Category Manager</Link></li>
           </ul>
           <hr/>
         </nav>

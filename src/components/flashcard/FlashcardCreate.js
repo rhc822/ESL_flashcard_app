@@ -12,11 +12,21 @@ state = {
   definition: "",
   categoryId: "",
   loadingStatus: false,
+  category: []
 }
 
+componentDidMount() {
+    AppData.getAllCategory()
+      .then((AppDataCategoryArray) => {
+        this.setState({
+          category: AppDataCategoryArray
+        })
+      })
+  }
+
 handleFieldChange = evt => {
-/*     console.log("Event target id", evt.target.id)
-    console.log("Event target value", evt.target.value) */
+    console.log("Event target id", evt.target.id)
+ /*    console.log("Event target value", evt.target.value) */
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
@@ -27,21 +37,23 @@ handleFieldChange = evt => {
     if (this.state.word === "") {
       window.alert("Please input a  word");
     } else {
+        console.log(this.state.categoryId)
       this.setState({ loadingStatus: true });
       const flashcard = {
         word: this.state.word,
         sentence: this.state.sentence,
-        url: this.state.url
+        url: this.state.url,
+        categoryId: this.state.categoryId
       };
 
-      // Create the animal and redirect user to animal list
+
       AppData.post(flashcard)
         .then(() => this.props.history.push("/"));
     }
   };
 
   render() {
-      console.log(this.state)
+      console.log(this.state.category)
       return (
         <>
             <form>
@@ -68,7 +80,27 @@ handleFieldChange = evt => {
                             onChange={this.handleFieldChange}
                             id="url"
                             placeholder="URL"
-                        />
+                        /><br />
+                        <select className="form-control"
+                            onChange={this.handleFieldChange}
+                            id="categoryId"
+                            value={this.state.categoryId}
+                        >
+                        {this.state.category.map(eachCategory =>
+                            <option
+                                key={eachCategory.id}
+                                value={eachCategory.id}
+                            >
+                                {`${eachCategory.name}`}
+                            </option>
+                        )}
+                        </select>
+                        <button
+                            type="button"
+                        >
+                            Category Manager
+                        </button>
+                    </div>
                     <div className="flashcardDefinition">
 
                     </div>
