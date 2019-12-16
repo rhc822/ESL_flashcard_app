@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import MainView from './Main/MainView'
 import FlashcardFront from './flashcard/FlashcardFront'
 import FlashcardBack from './flashcard/FlashcardBack'
+import FlashcardCreate from './flashcard/FlashcardCreate'
 
 /* Contains the routes for various "webpage" links */
 
@@ -11,8 +12,15 @@ class ApplicationView extends Component {
   render() {
     return (
       <React.Fragment>
+
         <Route exact path="/" render={(props) => {
           return <MainView {...props}/>
+        }} />
+
+        <Route exact path="/flashcard/create" render={(props) => {
+          return <FlashcardCreate
+                    {...props}
+                  />
         }} />
 
 {/*

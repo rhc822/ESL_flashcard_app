@@ -13,4 +13,13 @@ export default {
   getIndividualFlashcard(id) {
     return fetch(`${remoteURL}/flashcard/${id}`).then(result => result.json())
   },
+  post(newFlashcard) {
+    return fetch(`${remoteURL}/flashcard`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newFlashcard)
+    }).then(data => data.json())
+  },
 }

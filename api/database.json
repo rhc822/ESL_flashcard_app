@@ -51,6 +51,12 @@
       "url": "www.yachts.com",
       "categoryId": 2,
       "definition": "a medium-sized sailboat equipped for cruising or racing."
+    },
+    {
+      "word": "lime",
+      "sentence": "limes are good",
+      "url": "www.limelove.com",
+      "id": 5
     }
   ],
   "category": [
