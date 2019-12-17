@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import AppData from '../../modules/AppData'
 import './Flashcard.css'
+import App from '../../App';
 
 
-class FlashcardCreate extends Component {
+class FlashcardEdit extends Component {
 
 state = {
-  word: "",
-  sentence: "",
-  url: "",
-  definition: "",
-  categoryId: "",
-  loadingStatus: false,
-  category: []
+    id: "",
+    userId: "",
+    word: "",
+    sentence: "",
+    url: "",
+    definition: "",
+    categoryId: "",
+    loadingStatus: false,
+    category: []
 }
 
 /* Gets all the categories to map through and puts them in the category array in state above. This is for use in the drop-down in the render section. */
@@ -24,6 +27,17 @@ componentDidMount() {
           category: AppDataCategoryArray
         })
       })
+    AppData.getIndividualFlashcard(this.props.flashcardId)
+      .then((flashcard) => this.setState({
+          id: flashcard.id,
+          userId: flashcard.userId,
+          word: flashcard.word,
+          sentence: flashcard.sentence,
+          url: flashcard.url,
+          definition: flashcard.definition,
+          categoryId: flashcard.categoryId
+      })
+    )
   }
 
 /* Gets the value of a given input field and sets the appropriate state with it. */
@@ -36,27 +50,18 @@ handleFieldChange = evt => {
     this.setState(stateToChange);
   };
 
-/* Upon hitting submit button in render section, this function runs and posts the content to the database. */
-
-  constructNewFlashcard = evt => {
-    evt.preventDefault();
-    if (this.state.word === "") {
-      window.alert("Please input a  word");
-    } else {
-      this.setState({ loadingStatus: true });
-      const flashcard = {
+handleSubmit = () => {
+    const editedEntry = {
+        id: this.state.id,
+        userId: this.state.userId,
         word: this.state.word,
         sentence: this.state.sentence,
         url: this.state.url,
-        categoryId: this.state.categoryId,
-        definition: this.state.definition
-      };
-
-
-      AppData.post(flashcard)
-        .then(() => this.props.history.push("/"));
-    }
-  };
+        definition: this.state.definition,
+        categoryId: parseInt(this.state.categoryId),
+    };
+    this.props.updateExistingFlashcard(editedEntry)
+}
 
   render() {
       return (
@@ -71,6 +76,7 @@ handleFieldChange = evt => {
                             onChange={this.handleFieldChange}
                             id="word"
                             placeholder="Word"
+                            value={this.state.word}
                         /><br />
                         <label htmlFor="sentence">Enter the sentence</label>
                         <input
@@ -78,6 +84,7 @@ handleFieldChange = evt => {
                             onChange={this.handleFieldChange}
                             id="sentence"
                             placeholder="Sentence"
+                            value={this.state.sentence}
                         /><br />
                         <label htmlFor="url">Enter the URL</label>
                         <input
@@ -85,6 +92,7 @@ handleFieldChange = evt => {
                             onChange={this.handleFieldChange}
                             id="url"
                             placeholder="URL"
+                            value={this.state.url}
                         /><br />
                         <label htmlFor="definition">Enter the Definition</label>
                         <input
@@ -92,6 +100,7 @@ handleFieldChange = evt => {
                             onChange={this.handleFieldChange}
                             id="definition"
                             placeholder="Enter the definition"
+                            value={this.state.definition}
                         /><br />
                         <select className="form-control"
                             onChange={this.handleFieldChange}
@@ -113,10 +122,10 @@ handleFieldChange = evt => {
                             Category Manager
                         </button>
                     </div>
-                    <div className="flashcardNewSubmitButton">
+                    <div className="flashcardEditSubmitButton">
                         <button
                             type="button"
-                            onClick={this.constructNewFlashcard}
+                            onClick={this.handleSubmit}
                             disabled={this.state.loadingStatus}
                         > Submit
                         </button>
@@ -128,4 +137,4 @@ handleFieldChange = evt => {
   }
 }
 
-export default FlashcardCreate;
+export default FlashcardEdit;

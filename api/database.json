@@ -17,15 +17,6 @@
   ],
   "flashcard": [
     {
-      "id": 1,
-      "userId": 1,
-      "word": "apple",
-      "sentence": "Apples are good.",
-      "url": "www.apples.com",
-      "categoryId": 1,
-      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider."
-    },
-    {
       "id": 2,
       "userId": 2,
       "word": "orange",
@@ -53,90 +44,13 @@
       "definition": "a medium-sized sailboat equipped for cruising or racing."
     },
     {
-      "word": "lime",
-      "sentence": "limes are good",
-      "url": "www.limelove.com",
-      "id": 5
-    },
-    {
-      "word": "Kiwi",
-      "sentence": "Kiwis are pleasant...for a season",
-      "url": "www.kiwi.com",
-      "id": 6
-    },
-    {
-      "word": "pineapple",
-      "sentence": "Pineapples are good.",
-      "url": "www.pineapple.com",
-      "id": 7
-    },
-    {
-      "word": "dragon fruit",
-      "sentence": "Dragon fruit isn't that good",
-      "url": "www.df.com",
-      "id": 8
-    },
-    {
-      "word": "hgfd",
-      "sentence": "hgfd",
-      "url": "hgfd",
-      "id": 9
-    },
-    {
-      "word": "kjhg",
-      "sentence": "kjhgkjhg",
-      "url": "kjhgkjhg",
-      "categoryId": "",
-      "id": 10
-    },
-    {
-      "word": "a",
-      "sentence": "a",
-      "url": "a",
-      "categoryId": "",
-      "id": 11
-    },
-    {
-      "word": "qwer",
-      "sentence": "qwer",
-      "url": "qrwe",
-      "categoryId": "",
-      "id": 12
-    },
-    {
-      "word": "qweoiruy",
-      "sentence": "0987",
-      "url": "0987",
-      "categoryId": "",
-      "id": 13
-    },
-    {
-      "word": "dfsa",
-      "sentence": "fdsa",
-      "url": "fdsa",
-      "categoryId": "",
-      "id": 14
-    },
-    {
-      "word": "lkjh",
-      "sentence": "lkjh",
-      "url": "lkjh",
-      "categoryId": "",
-      "id": 15
-    },
-    {
-      "word": "-098",
-      "sentence": "0987",
-      "url": "0987",
-      "categoryId": "",
-      "id": 16
-    },
-    {
-      "word": "lkjh",
-      "sentence": ";lkj",
-      "url": ";lkj",
-      "categoryId": "1",
-      "id": 17
+      "id": 5,
+      "userId": 2,
+      "word": "CHANGE",
+      "sentence": "987",
+      "url": "987",
+      "definition": "987",
+      "categoryId": 1
     }
   ],
   "category": [

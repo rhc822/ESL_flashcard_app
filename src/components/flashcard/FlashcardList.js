@@ -9,7 +9,6 @@ class FlashcardList extends Component {
   }
 
 
-
   componentDidMount() {
     AppData.getFlashcard(this.props.categoryId)
       .then((AppDataFlashcardArray) => {

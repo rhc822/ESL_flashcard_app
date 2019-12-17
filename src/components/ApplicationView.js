@@ -1,13 +1,30 @@
-import { Route } from 'react-router-dom'
+import { Route, Link, withRouter } from 'react-router-dom'
 import React, { Component } from 'react'
 import MainView from './Main/MainView'
 import FlashcardFront from './flashcard/FlashcardFront'
 import FlashcardBack from './flashcard/FlashcardBack'
 import FlashcardCreate from './flashcard/FlashcardCreate'
+import FlashcardEdit from './flashcard/FlashcardEdit'
+import AppData from '../modules/AppData'
+
 
 /* Contains the routes for various "webpage" links */
 
 class ApplicationView extends Component {
+
+  /* This function is available for child components to use; namely, FlashcardFront and FlashcardBack. It's able to redirect to a different view with this.props.history.push because of the withRouter property from react-router-dom (and exported at the botom) from chapter 14. */
+
+  deleteFlashcard = (flashcardId) => {
+    AppData.delete(flashcardId)
+      .then(() => this.props.history.push("/"))
+  }
+
+  updateExistingFlashcard = (editedEntry) => {
+    this.setState({ loadingStatus: true });
+    AppData.update(editedEntry)
+    .then(() => this.props.history.push(`/flashcard/${editedEntry.id}`))
+  }
+
 
   render() {
     return (
@@ -38,6 +55,7 @@ Here's how flashcardId works(\d+):
         <Route exact path="/flashcard/:flashcardId(\d+)" render={(props) => {
           return <FlashcardFront
                     flashcardId={parseInt(props.match.params.flashcardId)}
+                    deleteFlashcard={this.deleteFlashcard}
                     {...props}
                     />
         }} />
@@ -45,12 +63,22 @@ Here's how flashcardId works(\d+):
         <Route exact path="/flashcard/:flashcardId(\d+)/FlashcardBack" render={(props) => {
           return <FlashcardBack
                     flashcardId={parseInt(props.match.params.flashcardId)}
+                    deleteFlashcard={this.deleteFlashcard}
                     {...props}
-                    />
+                  />
         }} />
+
+        <Route exact path="/flashcard/:flashcardId(\d+)/FlashcardEdit" render={(props) => {
+          return <FlashcardEdit
+                    flashcardId={parseInt(props.match.params.flashcardId)}
+                    updateExistingFlashcard={this.updateExistingFlashcard}
+                    {...props}
+                  />
+        }} />
+
       </React.Fragment>
     )
   }
 }
 
-export default ApplicationView
+export default withRouter(ApplicationView);
