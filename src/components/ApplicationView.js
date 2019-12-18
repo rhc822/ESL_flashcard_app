@@ -12,12 +12,14 @@ import AppData from '../modules/AppData'
 
 class ApplicationView extends Component {
 
-  /* This function is available for child components to use; namely, FlashcardFront and FlashcardBack. It's able to redirect to a different view with this.props.history.push because of the withRouter property from react-router-dom (and exported at the botom) from chapter 14. */
+  /* These functions are available for child components to use; namely, FlashcardFront and FlashcardBack. It's able to redirect to a different view with this.props.history.push because of the withRouter property from react-router-dom (and exported at the bottom) from chapter 14. */
 
   deleteFlashcard = (flashcardId) => {
     AppData.delete(flashcardId)
       .then(() => this.props.history.push("/"))
   }
+
+/* updateExistingFlashcard receives the content (essentially the state) from FlashcardEdit and sends it to AppData to update the database. */
 
   updateExistingFlashcard = (editedEntry) => {
     this.setState({ loadingStatus: true });

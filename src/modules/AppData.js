@@ -7,9 +7,13 @@ export default {
   getAllFlashcard() {
     return fetch(`${remoteURL}/flashcard`).then(result => result.json())
   },
+
+  /* Gets info from an individual flashcard and keeps it in an array */
   getFlashcard(id) {
     return fetch(`${remoteURL}/flashcard?categoryId=${id}`).then(result => result.json())
   },
+
+  /* Gets the flashcard info NOT in an array */
   getIndividualFlashcard(id) {
     return fetch(`${remoteURL}/flashcard/${id}`).then(result => result.json())
   },
@@ -28,13 +32,13 @@ export default {
     })
       .then(result => result.json())
   },
-  update(updatedEntry) {
-    return fetch(`${remoteURL}/flashcard/${updatedEntry.id}`, {
+  update(editedEntry) {
+    return fetch(`${remoteURL}/flashcard/${editedEntry.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(updatedEntry)
+      body: JSON.stringify(editedEntry)
     }).then(data => data.json());
   }
 }

@@ -39,8 +39,7 @@ state = {
           <Link
             className="card-flip"
             to={`/flashcard/${this.props.flashcardId}/FlashcardBack`}
-          >
-            Flip
+          >Flip
           </Link>
         </>
     );

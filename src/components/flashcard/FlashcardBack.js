@@ -37,16 +37,19 @@ class FlashcardBack extends Component {
             <p><strong>Website: </strong>{this.state.url}</p>
             <p><strong>Definition: </strong>{this.state.definition}</p>
             <button
-            type="button"
-            onClick={() => { this.props.history.push(`/flashcard/${this.props.flashcardId}/FlashcardEdit`) }}
-          >Edit
-          </button>
-            <button type="button" onClick={() => this.props.deleteFlashcard(this.props.flashcardId)}>Delete</button>
+                type="button"
+                onClick={() => { this.props.history.push(`/flashcard/${this.props.flashcardId}/FlashcardEdit`) }}
+            >Edit
+            </button>
+            <button
+                type="button"
+                onClick={() => this.props.deleteFlashcard(this.props.flashcardId)}
+            >Delete
+            </button>
             <Link
             className="card-flip"
             to={`/flashcard/${this.props.flashcardId}`}
-            >
-            Flip
+            >Flip
             </Link>
         </>
 

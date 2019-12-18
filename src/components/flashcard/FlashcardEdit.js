@@ -50,6 +50,8 @@ handleFieldChange = evt => {
     this.setState(stateToChange);
   };
 
+/* When the Submit button is pressed, this function is run. HandleSubmit() basically takes the state (via a variable called editedEntry) and runs updateExistingFlashcard function (located in ApplicationView) */
+
 handleSubmit = () => {
     const editedEntry = {
         id: this.state.id,
