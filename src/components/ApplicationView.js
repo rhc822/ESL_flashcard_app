@@ -1,4 +1,4 @@
-import { Route, Link, withRouter } from 'react-router-dom'
+import { Route, Link, withRouter, Redirect } from 'react-router-dom'
 import React, { Component } from 'react'
 import MainView from './Main/MainView'
 import FlashcardFront from './flashcard/FlashcardFront'
@@ -6,11 +6,15 @@ import FlashcardBack from './flashcard/FlashcardBack'
 import FlashcardCreate from './flashcard/FlashcardCreate'
 import FlashcardEdit from './flashcard/FlashcardEdit'
 import AppData from '../modules/AppData'
+import Login from './auth/Login'
 
 
 /* Contains the routes for various "webpage" links */
 
 class ApplicationView extends Component {
+
+    // Check if credentials are in local storage (returns true/false)
+    isAuthenticated = () => localStorage.getItem("credentials") !== null
 
   /* These functions are available for child components to use; namely, FlashcardFront and FlashcardBack. It's able to redirect to a different view with this.props.history.push because of the withRouter property from react-router-dom (and exported at the bottom) from chapter 14. */
 
@@ -32,8 +36,14 @@ class ApplicationView extends Component {
     return (
       <React.Fragment>
 
+        <Route path="/login" component={Login} />
+
         <Route exact path="/" render={(props) => {
-          return <MainView {...props}/>
+          if (this.isAuthenticated()) {
+            return <MainView {...props} />
+        } else {
+          return <Login {...props}/>
+        }
         }} />
 
         <Route exact path="/flashcard/create" render={(props) => {
