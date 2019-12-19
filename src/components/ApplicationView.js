@@ -13,8 +13,6 @@ import Login from './auth/Login'
 
 class ApplicationView extends Component {
 
-    // Check if credentials are in local storage (returns true/false)
-    isAuthenticated = () => localStorage.getItem("credentials") !== null
 
   /* These functions are available for child components to use; namely, FlashcardFront and FlashcardBack. It's able to redirect to a different view with this.props.history.push because of the withRouter property from react-router-dom (and exported at the bottom) from chapter 14. */
 
@@ -36,13 +34,15 @@ class ApplicationView extends Component {
     return (
       <React.Fragment>
 
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={(props) => {
+          return <Login {...this.props}/>
+        }} />
 
         <Route exact path="/" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.isAuthenticated()) {
             return <MainView {...props} />
         } else {
-          return <Login {...props}/>
+          return <Login {...this.props}/>
         }
         }} />
 

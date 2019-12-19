@@ -1,16 +1,16 @@
 const remoteURL = "http://localhost:8088"
 
 export default {
-  getAllCategory() {
-    return fetch(`${remoteURL}/category`).then(result => result.json())
+  getAllCategory(userId) {
+    return fetch(`${remoteURL}/category?userId=${userId}`).then(result => result.json())
   },
-  getAllFlashcard() {
-    return fetch(`${remoteURL}/flashcard`).then(result => result.json())
+  getAllFlashcard(userId) {
+    return fetch(`${remoteURL}/flashcard?userId=${userId}`).then(result => result.json())
   },
 
   /* Gets info from an individual flashcard and keeps it in an array */
-  getFlashcard(id) {
-    return fetch(`${remoteURL}/flashcard?categoryId=${id}`).then(result => result.json())
+  getFlashcard(categoryId, userId) {
+    return fetch(`${remoteURL}/flashcard?categoryId=${categoryId}&&userId=${userId}`).then(result => result.json())
   },
 
   /* Gets the flashcard info NOT in an array */
@@ -40,5 +40,8 @@ export default {
       },
       body: JSON.stringify(editedEntry)
     }).then(data => data.json());
-  }
+  },
+  get(route) {
+    return fetch(`${remoteURL}/${route}`).then(result => result.json())
+  },
 }

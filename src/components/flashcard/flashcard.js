@@ -13,7 +13,7 @@ class Flashcard extends Component {
           <input type="checkbox" name={`flashcard${this.props.id}`} value=""></input>
           <span>{this.props.word}</span>
         </div>
-      </div>
+    </div>
     );
   }
 }

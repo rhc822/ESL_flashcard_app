@@ -4,15 +4,16 @@ import './NavBar.css'
 
 class NavBar extends Component {
 
+/* The ternary "... ? ... : ..." below displays certain NavBar stuff (the first <></> ) by using this.props.isAuthenticated. If user is not logged in, go to Login screen. */
 
   render(){
 
     return (
         <nav>
           <ul className="container">
-            <li><Link to="/">Home</Link></li>
-            {(this.props.isAuthenticated) ?
+            {(this.props.isAuthenticated()) ?
             <>
+              <li><Link to="/">Home</Link></li>
               <li><Link
                 className="nav-link"
                 to="/flashcard/create"

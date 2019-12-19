@@ -1,11 +1,12 @@
 import React, { Component } from "react"
+import AppData from "../../modules/AppData"
 
 class Login extends Component {
 
 
   state = {
     email: "",
-    password: ""
+    password: "",
   }
 
   // Update state whenever an input field is edited
@@ -15,20 +16,29 @@ class Login extends Component {
     this.setState(stateToChange)
   }
 
+
   handleLogin = (e) => {
     e.preventDefault()
     /*
-        For now, just store the email and password that
-        the customer enters into local storage.
+        The first part of the get puts the email and password in local storage as a single object.
+
+        The second part of the get puts the userId into local storage as an array.
     */
+    AppData.get(`user?email=${this.state.email}`)
+    .then(r => {
+        console.log(r)
     localStorage.setItem(
         "credentials",
         JSON.stringify({
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
         })
     )
+    localStorage.setItem(
+        "userId", r[0].id
+    )
     this.props.history.push("/");
+    })
 
   }
 

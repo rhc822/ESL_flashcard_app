@@ -13,7 +13,7 @@ class MainView extends Component {
       }
 
       componentDidMount() {
-        AppData.getAllCategory()
+        AppData.getAllCategory(localStorage.getItem("userId"))
           .then((AppDataCategoryArray) => {
             this.setState({
               category: AppDataCategoryArray

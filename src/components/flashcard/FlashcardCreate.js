@@ -18,7 +18,7 @@ state = {
 /* Gets all the categories to map through and puts them in the category array in state above. This is for use in the drop-down in the render section. */
 
 componentDidMount() {
-    AppData.getAllCategory()
+    AppData.getAllCategory(localStorage.getItem("userId"))
       .then((AppDataCategoryArray) => {
         this.setState({
           category: AppDataCategoryArray
@@ -36,7 +36,7 @@ handleFieldChange = evt => {
     this.setState(stateToChange);
   };
 
-/* Upon hitting submit button in render section, this function runs and posts the content to the database. */
+/* Upon hitting submit button in render section, this function runs and posts the content to the database. Number() ensures that the resulting value for the categoryId and userId keys are integers instead of strings. */
 
   constructNewFlashcard = evt => {
     evt.preventDefault();
@@ -48,8 +48,9 @@ handleFieldChange = evt => {
         word: this.state.word,
         sentence: this.state.sentence,
         url: this.state.url,
-        categoryId: this.state.categoryId,
-        definition: this.state.definition
+        categoryId: Number(this.state.categoryId),
+        definition: this.state.definition,
+        userId: Number(localStorage.getItem("userId"))
       };
 
 

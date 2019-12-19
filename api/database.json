@@ -2,29 +2,20 @@
   "user": [
     {
       "id": 1,
-      "email": "email",
+      "email": "email@email.com",
       "password": "password",
       "name": "John",
       "language": "English"
     },
     {
       "id": 2,
-      "email": "email2",
+      "email": "email2@email.com",
       "password": "password2",
       "name": "Jane",
       "language": "English"
     }
   ],
   "flashcard": [
-    {
-      "id": 2,
-      "userId": 2,
-      "word": "orange",
-      "sentence": "Oranges are good too.",
-      "url": "www.oranges.com",
-      "categoryId": 1,
-      "definition": "a round juicy citrus fruit with a tough bright reddish-yellow rind."
-    },
     {
       "id": 3,
       "userId": 1,
@@ -44,21 +35,31 @@
       "definition": "a medium-sized sailboat equipped for cruising or racing."
     },
     {
-      "id": 5,
-      "userId": 2,
-      "word": "CHANGE",
-      "sentence": "987",
-      "url": "987",
-      "definition": "987",
-      "categoryId": 1
+      "word": "9876",
+      "sentence": "9876",
+      "url": "9876",
+      "categoryId": 1,
+      "definition": "9876",
+      "userId": 1,
+      "id": 5
     },
     {
-      "word": "Test",
-      "sentence": "test sentence",
-      "url": "www.testsentence.com",
-      "categoryId": "1",
-      "definition": "Tests are tests",
+      "word": "aopewiu",
+      "sentence": "poiupoiu",
+      "url": "poiu",
+      "categoryId": 1,
+      "definition": "poiu",
+      "userId": 1,
       "id": 6
+    },
+    {
+      "word": "qwer",
+      "sentence": "qwer",
+      "url": "qwer",
+      "categoryId": 2,
+      "definition": "qwer",
+      "userId": 1,
+      "id": 7
     }
   ],
   "category": [

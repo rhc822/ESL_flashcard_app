@@ -21,7 +21,7 @@ state = {
 /* Gets all the categories to map through and puts them in the category array in state above. This is for use in the drop-down in the render section. */
 
 componentDidMount() {
-    AppData.getAllCategory()
+    AppData.getAllCategory(localStorage.getItem("userId"))
       .then((AppDataCategoryArray) => {
         this.setState({
           category: AppDataCategoryArray

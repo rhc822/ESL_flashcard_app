@@ -10,7 +10,7 @@ class FlashcardList extends Component {
 
 
   componentDidMount() {
-    AppData.getFlashcard(this.props.categoryId)
+    AppData.getFlashcard(this.props.categoryId, localStorage.getItem("userId"))
       .then((AppDataFlashcardArray) => {
         this.setState({
           flashcard: AppDataFlashcardArray
@@ -18,7 +18,7 @@ class FlashcardList extends Component {
       })
   }
 
-  /* This section maps through the flashcard list and builds each flashcard with the flashcard  */
+  /* This section maps through the flashcard list and builds each flashcard with the flashcard */
 
   render() {
     return (
