@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import AppData from '../../modules/AppData'
+import AppData from '../../modules/AppData';
+import { Link } from "react-router-dom";
+
 
 
 class CategoryManager extends Component {
@@ -45,7 +47,7 @@ handleFieldChange = evt => {
         userId: Number(localStorage.getItem("userId"))
       };
 
-      AppData.post(newCategory)
+      AppData.postCategory(newCategory)
         .then(() => this.props.history.push("/category/CategoryManager"));
     }
   };
@@ -80,8 +82,12 @@ handleFieldChange = evt => {
                 return <>
                     <input
                         type="checkbox"
-                        name={`categoryId-${eachCategory.id}`}/>
-                    <span>{eachCategory.name}</span>
+                        name={`categoryId-${eachCategory.id}`}
+                    />
+                    <Link
+                        to={`/category/${eachCategory.id}/CategoryEdit`}
+                    ><span>{eachCategory.name}</span>
+                    </Link>
                 </>
                 }
             )}

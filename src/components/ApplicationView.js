@@ -96,7 +96,7 @@ Here's how flashcardId works(\d+):
                   />
         }} />
 
-        <Route exact path="/category/:categoryId(\d+)" render={(props) => {
+        <Route exact path="/category/:categoryId(\d+)/CategoryEdit" render={(props) => {
           return <CategoryEdit
                     categoryId={parseInt(props.match.params.categoryId)}
                     {...props}

@@ -41,18 +41,18 @@ handleFieldChange = evt => {
 
 /* Upon hitting submit button in render section, this function runs and posts the content to the database. Number() ensures that the resulting value for the categoryId and userId keys are integers instead of strings. */
 
-  constructNewCategory = evt => {
+  editCategory = evt => {
     evt.preventDefault();
     if (this.state.name === "") {
       window.alert("Please enter a category name");
     } else {
       this.setState({ loadingStatus: true });
-      const newCategory = {
+      const editedCategory = {
         name: this.state.name,
         userId: Number(localStorage.getItem("userId"))
       };
 
-      AppData.post(newCategory)
+      AppData.postCategory(editedCategory)
         .then(() => this.props.history.push("/category/CategoryManager"));
     }
   };
@@ -60,16 +60,18 @@ handleFieldChange = evt => {
   render() {
       return (
         <>
-            <form onSubmit={this.constructNewCategory}>
+            <form onSubmit={this.editCategory}>
                 <fieldset>
                     <div>
-                        <label htmlFor="name">Enter a category name</label>
+                        <label htmlFor="name">Modify the category name</label>
                         <input
                             type="text"
                             required
                             onChange={this.handleFieldChange}
                             id="name"
-                            placeholder="Category Name"/>
+                            placeholder="Category Name"
+                            value={this.state.name}
+                        />
                     </div>
                     <br />
                     <div className="categoryNewSubmitButton">
@@ -81,21 +83,8 @@ handleFieldChange = evt => {
                     </div>
                 </fieldset>
             </form>
-            <hr />
-            <div>
-            {this.state.category.map(eachCategory => {
-                return <>
-                    <input
-                        type="checkbox"
-                        name={`categoryId-${eachCategory.id}`}/>
-                    <span>{eachCategory.name}</span>
-                </>
-                }
-            )}
-            </div>
         </>
-    );
-  }
+    )}
 }
 
 export default CategoryEdit;

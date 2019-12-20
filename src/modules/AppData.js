@@ -20,7 +20,7 @@ export default {
   getIndividualCategory(id) {
     return fetch(`${remoteURL}/category/${id}`).then(result => result.json())
   },
-  post(newFlashcard) {
+  postFlashcard(newFlashcard) {
     return fetch(`${remoteURL}/flashcard`, {
       method: "POST",
       headers: {
@@ -29,7 +29,7 @@ export default {
       body: JSON.stringify(newFlashcard)
     }).then(data => data.json())
   },
-  post(newCategory) {
+  postCategory(newCategory) {
     return fetch(`${remoteURL}/category`, {
       method: "POST",
       headers: {

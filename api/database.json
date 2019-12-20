@@ -60,6 +60,15 @@
       "url": "www.apples.com",
       "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider.",
       "categoryId": 1
+    },
+    {
+      "word": "9876",
+      "sentence": "9876",
+      "url": "9876",
+      "categoryId": 1,
+      "definition": "9876",
+      "userId": 1,
+      "id": 12
     }
   ],
   "category": [
@@ -82,6 +91,16 @@
       "id": 4,
       "userId": 2,
       "name": "transportation"
+    },
+    {
+      "name": "boogaboo",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "name": "foods",
+      "userId": 1,
+      "id": 7
     }
   ]
 }

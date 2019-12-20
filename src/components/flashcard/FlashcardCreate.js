@@ -54,7 +54,7 @@ handleFieldChange = evt => {
       };
 
 
-      AppData.post(flashcard)
+      AppData.postFlashcard(flashcard)
         .then(() => this.props.history.push("/"));
     }
   };
