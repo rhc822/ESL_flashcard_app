@@ -17,6 +17,9 @@ export default {
   getIndividualFlashcard(id) {
     return fetch(`${remoteURL}/flashcard/${id}`).then(result => result.json())
   },
+  getIndividualCategory(id) {
+    return fetch(`${remoteURL}/category/${id}`).then(result => result.json())
+  },
   post(newFlashcard) {
     return fetch(`${remoteURL}/flashcard`, {
       method: "POST",
@@ -24,6 +27,15 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(newFlashcard)
+    }).then(data => data.json())
+  },
+  post(newCategory) {
+    return fetch(`${remoteURL}/category`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(newCategory)
     }).then(data => data.json())
   },
   delete(id) {

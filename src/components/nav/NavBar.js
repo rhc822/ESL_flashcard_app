@@ -13,21 +13,36 @@ class NavBar extends Component {
           <ul className="container">
             {(this.props.isAuthenticated()) ?
             <>
-              <li><Link to="/">Home</Link></li>
-              <li><Link
-                className="nav-link"
-                to="/flashcard/create"
-              >Create Flashcard
-              </Link></li>
+              <li>
+                <Link to="/"
+                >Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="nav-link"
+                  to="/flashcard/create"
+                >Create Flashcard
+                </Link>
+              </li>
               <li>Clear checkboxes</li>
-              <li><Link
+              <li>
+                <Link
                 className="nav-link"
-                to="/category"
-              >Category Manager</Link></li>
+                to="/category/CategoryManager"
+                >Category Manager
+                </Link>
+              </li>
             </>
             :
             <>
-            <li><Link className="nav-link" to="/login">Login</Link></li>
+            <li>
+              <Link
+                className="nav-link"
+                to="/login"
+                >Login
+              </Link>
+            </li>
             <hr/>
             </>
             }

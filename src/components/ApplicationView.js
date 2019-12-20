@@ -5,6 +5,8 @@ import FlashcardFront from './flashcard/FlashcardFront'
 import FlashcardBack from './flashcard/FlashcardBack'
 import FlashcardCreate from './flashcard/FlashcardCreate'
 import FlashcardEdit from './flashcard/FlashcardEdit'
+import CategoryManager from './category/CategoryManager'
+import CategoryEdit from './category/CategoryEdit'
 import AppData from '../modules/AppData'
 import Login from './auth/Login'
 
@@ -84,6 +86,19 @@ Here's how flashcardId works(\d+):
           return <FlashcardEdit
                     flashcardId={parseInt(props.match.params.flashcardId)}
                     updateExistingFlashcard={this.updateExistingFlashcard}
+                    {...props}
+                  />
+        }} />
+
+        <Route exact path="/category/CategoryManager" render={(props) => {
+          return <CategoryManager
+                    {...props}
+                  />
+        }} />
+
+        <Route exact path="/category/:categoryId(\d+)" render={(props) => {
+          return <CategoryEdit
+                    categoryId={parseInt(props.match.params.categoryId)}
                     {...props}
                   />
         }} />
