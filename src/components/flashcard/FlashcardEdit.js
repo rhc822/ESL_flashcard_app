@@ -104,7 +104,8 @@ handleSubmit = () => {
                             placeholder="Enter the definition"
                             value={this.state.definition}
                         /><br />
-                        <select className="form-control"
+                        <select
+                            className="form-control"
                             onChange={this.handleFieldChange}
                             id="categoryId"
                             value={this.state.categoryId}

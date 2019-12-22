@@ -15,6 +15,10 @@ import Login from './auth/Login'
 
 class ApplicationView extends Component {
 
+  deleteCategory = (categoryId) => {
+  AppData.delete(categoryId)
+      .then(() => this.props.history.push("/category/CategoryManager"))
+  }
 
   /* These functions are available for child components to use; namely, FlashcardFront and FlashcardBack. It's able to redirect to a different view with this.props.history.push because of the withRouter property from react-router-dom (and exported at the bottom) from chapter 14. */
 
@@ -31,6 +35,11 @@ class ApplicationView extends Component {
     .then(() => this.props.history.push(`/flashcard/${editedEntry.id}`))
   }
 
+  updateExistingCategory = (editedCategory) => {
+    this.setState({ loadingStatus: true });
+    AppData.update(editedCategory)
+    .then(() => this.props.history.push(`/category/CategoryManager`))
+  }
 
   render() {
     return (
@@ -92,12 +101,15 @@ Here's how flashcardId works(\d+):
 
         <Route exact path="/category/CategoryManager" render={(props) => {
           return <CategoryManager
+                    updateExistingCategory={this.updateExistingCategory}
                     {...props}
                   />
         }} />
 
         <Route exact path="/category/:categoryId(\d+)/CategoryEdit" render={(props) => {
           return <CategoryEdit
+                    updateExistingCategory={this.updateExistingCategory}
+                    deleteCategory={this.deleteCategory}
                     categoryId={parseInt(props.match.params.categoryId)}
                     {...props}
                   />

@@ -91,16 +91,6 @@
       "id": 4,
       "userId": 2,
       "name": "transportation"
-    },
-    {
-      "name": "boogaboo",
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "name": "foods",
-      "userId": 1,
-      "id": 7
     }
   ]
 }

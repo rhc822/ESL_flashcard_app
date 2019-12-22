@@ -58,7 +58,7 @@ handleFieldChange = evt => {
             <form onSubmit={this.constructNewCategory}>
                 <fieldset>
                     <div>
-                        <label htmlFor="name">Enter a category name</label>
+                        <label htmlFor="name">Create a category name</label>
                         <input
                             type="text"
                             required
@@ -86,6 +86,7 @@ handleFieldChange = evt => {
                     />
                     <Link
                         to={`/category/${eachCategory.id}/CategoryEdit`}
+                        {...this.props}
                     ><span>{eachCategory.name}</span>
                     </Link>
                 </>

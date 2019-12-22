@@ -44,6 +44,12 @@ export default {
     })
       .then(result => result.json())
   },
+  delete(categoryId) {
+    return fetch(`${remoteURL}/category/${categoryId}`, {
+      method: "DELETE"
+    })
+      .then(result => result.json())
+  },
   update(editedEntry) {
     return fetch(`${remoteURL}/flashcard/${editedEntry.id}`, {
       method: "PUT",
@@ -51,6 +57,15 @@ export default {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(editedEntry)
+    }).then(data => data.json());
+  },
+  update(editedCategory) {
+    return fetch(`${remoteURL}/category/${editedCategory.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedCategory)
     }).then(data => data.json());
   },
   get(route) {

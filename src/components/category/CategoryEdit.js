@@ -6,7 +6,7 @@ class CategoryEdit extends Component {
 
 state = {
   name: "",
-  categoryId: "",
+  id: "",
   loadingStatus: false,
   category: []
 }
@@ -41,6 +41,7 @@ handleFieldChange = evt => {
 
 /* Upon hitting submit button in render section, this function runs and posts the content to the database. Number() ensures that the resulting value for the categoryId and userId keys are integers instead of strings. */
 
+
   editCategory = evt => {
     evt.preventDefault();
     if (this.state.name === "") {
@@ -49,13 +50,12 @@ handleFieldChange = evt => {
       this.setState({ loadingStatus: true });
       const editedCategory = {
         name: this.state.name,
+        id: this.state.id,
         userId: Number(localStorage.getItem("userId"))
       };
-
-      AppData.postCategory(editedCategory)
-        .then(() => this.props.history.push("/category/CategoryManager"));
+      this.props.updateExistingCategory(editedCategory)
     }
-  };
+}
 
   render() {
       return (
@@ -74,6 +74,11 @@ handleFieldChange = evt => {
                         />
                     </div>
                     <br />
+                    <button
+                        type="button"
+                        onClick={() => this.props.deleteCategory(this.props.categoryId)}>
+                            Delete
+                    </button>
                     <div className="categoryNewSubmitButton">
                         <button
                             type="submit"
