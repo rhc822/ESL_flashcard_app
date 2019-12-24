@@ -110,16 +110,16 @@ handleFieldChange = evt => {
                         </select>
                         <button
                             type="button"
-                        >
-                            Category Manager
+                            onClick= {() => { this.props.history.push("/category/CategoryManager")}}>
+                                Category Manager
                         </button>
                     </div>
                     <div className="flashcardNewSubmitButton">
                         <button
                             type="button"
                             onClick={this.constructNewFlashcard}
-                            disabled={this.state.loadingStatus}
-                        > Submit
+                            disabled={this.state.loadingStatus}>
+                                Submit
                         </button>
                     </div>
                 </fieldset>
