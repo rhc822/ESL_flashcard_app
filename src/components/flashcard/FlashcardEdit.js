@@ -43,8 +43,8 @@ componentDidMount() {
 /* Gets the value of a given input field and sets the appropriate state with it. */
 
 handleFieldChange = evt => {
-    // console.log("Event target id", evt.target.id)
-    //  console.log("Event target value", evt.target.value)
+    console.log("Event target id", evt.target.id)
+    console.log("Event target value", evt.target.value)
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
@@ -110,14 +110,14 @@ handleSubmit = () => {
                             id="categoryId"
                             value={this.state.categoryId}
                         >
-                        {this.state.category.map(eachCategory =>
-                            <option
-                                key={eachCategory.id}
-                                value={eachCategory.id}
-                            >
-                                {`${eachCategory.name}`}
-                            </option>
-                        )}
+                            {this.state.category.map(eachCategory =>
+                                <option
+                                    key={eachCategory.id}
+                                    value={eachCategory.id}
+                                >
+                                    {`${eachCategory.name}`}
+                                </option>
+                            )}
                         </select>
                         <button
                             type="button"

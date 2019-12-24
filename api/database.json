@@ -17,76 +17,22 @@
   ],
   "flashcard": [
     {
-      "id": 4,
-      "userId": 2,
-      "word": "yacht",
-      "sentence": "Only the rich have yachts.",
-      "url": "www.yachts.com",
-      "categoryId": 2,
-      "definition": "a medium-sized sailboat equipped for cruising or racing."
-    },
-    {
-      "word": "Boat",
-      "sentence": "Boats are nice",
-      "url": "www.boats.com",
-      "categoryId": 2,
-      "definition": "a small vessel propelled on water by oars, sails, or an engine.",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "word": "Banana",
-      "sentence": "Bananas are delicious",
-      "url": "www.bananas.com",
-      "categoryId": 3,
-      "definition": "a long curved fruit which grows in clusters and has soft pulpy flesh and yellow skin when ripe.",
-      "userId": 2,
-      "id": 9
-    },
-    {
-      "word": "schooner",
-      "sentence": "Schooners look majestic",
-      "url": "www.bigboats.com",
-      "categoryId": 4,
-      "definition": "a sailing ship with two or more masts, typically with the foremast smaller than the mainmast, and having gaff-rigged lower masts.",
-      "userId": 2,
-      "id": 10
-    },
-    {
-      "id": 11,
-      "userId": 1,
-      "word": "apples",
-      "sentence": "An apple a day keeps the doctor away",
-      "url": "www.apples.com",
-      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider.",
-      "categoryId": 1
-    },
-    {
-      "word": "9876",
-      "sentence": "9876",
-      "url": "9876",
+      "word": "Apple",
+      "sentence": "Apples are good.",
+      "url": "www.buyapples.com",
       "categoryId": 1,
-      "definition": "9876",
+      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider.",
       "userId": 1,
-      "id": 12
+      "id": 1
     },
     {
       "word": "Airplane",
-      "sentence": "Airplanes fly in the sky",
-      "url": "www.boeing.com",
+      "sentence": "Airplanes fly.",
+      "url": "www.eyeinthesky.com",
       "categoryId": 5,
       "definition": "a powered flying vehicle with fixed wings and a weight greater than that of the air it displaces.",
       "userId": 1,
-      "id": 13
-    },
-    {
-      "word": "catamaran",
-      "sentence": "catamarans are funny names",
-      "url": "www.cattiewattie.com",
-      "categoryId": 5,
-      "definition": "a yacht or other boat with twin hulls in parallel.",
-      "userId": 1,
-      "id": 14
+      "id": 2
     }
   ],
   "category": [
@@ -109,11 +55,6 @@
       "name": "Transportation",
       "userId": 1,
       "id": 5
-    },
-    {
-      "name": "Unique",
-      "userId": 1,
-      "id": 6
     }
   ]
 }

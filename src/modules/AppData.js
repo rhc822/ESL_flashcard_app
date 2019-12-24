@@ -38,19 +38,19 @@ export default {
       body: JSON.stringify(newCategory)
     }).then(data => data.json())
   },
-  delete(id) {
+  deleteFlashcard(id) {
     return fetch(`${remoteURL}/flashcard/${id}`, {
       method: "DELETE"
     })
       .then(result => result.json())
   },
-  delete(categoryId) {
+  deleteCategory(categoryId) {
     return fetch(`${remoteURL}/category/${categoryId}`, {
       method: "DELETE"
     })
       .then(result => result.json())
   },
-  update(editedEntry) {
+  updateFlashcard(editedEntry) {
     return fetch(`${remoteURL}/flashcard/${editedEntry.id}`, {
       method: "PUT",
       headers: {
@@ -59,7 +59,7 @@ export default {
       body: JSON.stringify(editedEntry)
     }).then(data => data.json());
   },
-  update(editedCategory) {
+  updateCategory(editedCategory) {
     return fetch(`${remoteURL}/category/${editedCategory.id}`, {
       method: "PUT",
       headers: {
