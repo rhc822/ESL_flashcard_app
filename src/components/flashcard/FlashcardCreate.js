@@ -99,6 +99,7 @@ handleFieldChange = evt => {
                             id="categoryId"
                             value={this.state.categoryId}
                         >
+                            <option>Select a category</option>
                         {this.state.category.map(eachCategory =>
                             <option
                                 key={eachCategory.id}

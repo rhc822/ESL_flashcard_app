@@ -17,13 +17,13 @@
   ],
   "flashcard": [
     {
-      "word": "Apple",
-      "sentence": "Apples are good.",
-      "url": "www.buyapples.com",
-      "categoryId": 1,
-      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider.",
+      "id": 1,
       "userId": 1,
-      "id": 1
+      "word": "Apple",
+      "sentence": "Apples are delicious.",
+      "url": "www.apples.com",
+      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider.",
+      "categoryId": 2
     },
     {
       "word": "Airplane",
@@ -33,11 +33,20 @@
       "definition": "a powered flying vehicle with fixed wings and a weight greater than that of the air it displaces.",
       "userId": 1,
       "id": 2
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "word": "banana",
+      "sentence": "Bananas are nice",
+      "url": "www.goingbananas.com",
+      "definition": "A long, yellow fruit that monkeys like.",
+      "categoryId": 2
     }
   ],
   "category": [
     {
-      "id": 1,
+      "id": 2,
       "userId": 1,
       "name": "food"
     },
