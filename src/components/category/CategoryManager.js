@@ -25,7 +25,6 @@ componentDidMount() {
   }
 
 /* Gets the value of a given input field and sets the appropriate state with it. */
-
 handleFieldChange = evt => {
     // console.log("Event target id", evt.target.id)
     //  console.log("Event target value", evt.target.value)
@@ -35,7 +34,6 @@ handleFieldChange = evt => {
   };
 
 /* Upon hitting submit button in render section, this function runs and posts the content to the database. Number() ensures that the resulting value for the categoryId and userId keys are integers instead of strings. */
-
   constructNewCategory = evt => {
     evt.preventDefault();
     if (this.state.name === "") {
@@ -46,16 +44,19 @@ handleFieldChange = evt => {
         name: this.state.name,
         userId: Number(localStorage.getItem("userId"))
       };
-
       AppData.postCategory(newCategory)
-        .then(() => this.props.history.push("/category/CategoryManager"));
-    }
+        .then(() => this.componentDidMount())
+        .then(() => document.getElementById("name").value = "")
+
   };
+  }
+
+  /* {() => { this.props.history.push("/category/CategoryManager")}} */
 
   render() {
       return (
         <>
-            <form onSubmit={this.constructNewCategory}>
+            <form id="categoryForm">
                 <fieldset>
                     <div>
                         <label htmlFor="name">Create a category name</label>
@@ -69,9 +70,9 @@ handleFieldChange = evt => {
                     <br />
                     <div className="categoryNewSubmitButton">
                         <button
-                            type="submit"
-                            disabled={this.state.loadingStatus}
-                        > Submit
+                            onClick={this.constructNewCategory}
+                        >
+                            Submit
                         </button>
                     </div>
                 </fieldset>
