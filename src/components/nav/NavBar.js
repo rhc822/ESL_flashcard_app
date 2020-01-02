@@ -4,7 +4,7 @@ import './NavBar.css'
 
 class NavBar extends Component {
 
-/* THIS WAS THE INITIAL CODE FROM THE NAVBAR
+/* THESE ARE THE INITIAL NAVBAR LINKS THAT I CREATED
 
   <ul className="container">
   {(this.props.isAuthenticated()) ?
@@ -45,29 +45,41 @@ class NavBar extends Component {
 </ul>
  */
 
+/* THERE ARE THE LINKS I GOT FROM W3C CSS
+
+            <a href="/" class="w3-bar-item w3-button w3-mobile"><i class="fas fa-home"></i>  Home</a>
+            <a href="/flashcard/create" class="w3-bar-item w3-button w3-mobile"><i class="far fa-file-alt"></i>  Create Flashcard</a>
+            <a href="/category/CategoryManager" class="w3-bar-item w3-button w3-mobile"><i class="fas fa-sitemap"></i>  Category Manager</a>
+
+
+*/
+
+
 /* The ternary "... ? ... : ..." below displays certain NavBar stuff (the first <></> ) by using this.props.isAuthenticated. If user is not logged in, go to Login screen. */
 
   render(){
 
     return (
-        <nav>
-          {(this.props.isAuthenticated()) ?
-            <>
-              <div class="w3-bar w3-black w3-xlarge">
-                <a href="/" class="w3-bar-item w3-button w3-mobile"><i class="fas fa-home"></i>  Home</a>
-                <a href="/flashcard/create" class="w3-bar-item w3-button w3-mobile"><i class="far fa-file-alt"></i>  Create Flashcard</a>
-                <a href="/category/CategoryManager" class="w3-bar-item w3-button w3-mobile"><i class="fas fa-sitemap"></i>  Category Manager</a>
-              </div>
-            </>
-            :
-            <>
-              <Link
-                className="nav-link"
-                to="/login"
-              ></Link>
-            </>
-          }
-        </nav>
+      <>
+        {(this.props.isAuthenticated()) ?
+          <nav class="w3-bar w3-black w3-xlarge">
+            <Link to="/" class="w3-bar-item w3-button w3-mobile"><i class="fas fa-home"></i>
+              Home
+            </Link>
+            <Link class="w3-bar-item w3-button w3-mobile" to="/flashcard/create"><i class="far fa-file-alt"></i>
+              Create Flashcard
+            </Link>
+            <Link class="w3-bar-item w3-button w3-mobile" to="/category/CategoryManager"><i class="fas fa-sitemap"></i>
+              Category Manager
+            </Link>
+          </nav>
+          :
+          <Link
+            className="nav-link"
+            to="/login"
+          ></Link>
+        }
+      </>
     )
   }
 }
