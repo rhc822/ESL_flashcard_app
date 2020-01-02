@@ -33,7 +33,7 @@ handleFieldChange = evt => {
     this.setState(stateToChange);
   };
 
-/* Upon hitting submit button in render section, this function runs and posts the content to the database. Number() ensures that the resulting value for the categoryId and userId keys are integers instead of strings. */
+/* Upon hitting submit button in render section, this function runs and posts the content to the database. userId set to Number() ensures that the resulting value for the categoryId and userId keys are integers instead of strings. After posting, there are two .thens. Then first re-runs componentDidMount so the category list displays again with the latest addition. The second sets the input field value to an empty string. */
   constructNewCategory = evt => {
     evt.preventDefault();
     if (this.state.name === "") {

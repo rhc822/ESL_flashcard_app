@@ -58,9 +58,11 @@ class ApplicationView extends Component {
         }} />
 
         <Route exact path="/flashcard/create" render={(props) => {
-          return <FlashcardCreate
-                    {...props}
-                  />
+          if (this.props.isAuthenticated()) {
+            return <FlashcardCreate {...props}/>
+        } else {
+            return <Login {...this.props}/>
+        }
         }} />
 
 {/*
@@ -76,43 +78,63 @@ Here's how flashcardId works(\d+):
 */}
 
         <Route exact path="/flashcard/:flashcardId(\d+)" render={(props) => {
-          return <FlashcardFront
+          if (this.props.isAuthenticated()) {
+            return <FlashcardFront
                     flashcardId={parseInt(props.match.params.flashcardId)}
                     deleteFlashcard={this.deleteFlashcard}
                     {...props}
                     />
+        } else {
+            return <Login {...this.props}/>
+        }
         }} />
 
         <Route exact path="/flashcard/:flashcardId(\d+)/FlashcardBack" render={(props) => {
-          return <FlashcardBack
+          if (this.props.isAuthenticated()) {
+            return <FlashcardBack
                     flashcardId={parseInt(props.match.params.flashcardId)}
                     deleteFlashcard={this.deleteFlashcard}
                     {...props}
                   />
+        } else {
+            return <Login {...this.props}/>
+        }
         }} />
 
         <Route exact path="/flashcard/:flashcardId(\d+)/FlashcardEdit" render={(props) => {
-          return <FlashcardEdit
+          if (this.props.isAuthenticated()) {
+            return <FlashcardEdit
                     flashcardId={parseInt(props.match.params.flashcardId)}
                     updateExistingFlashcard={this.updateExistingFlashcard}
                     {...props}
                   />
+        } else {
+            return <Login {...this.props}/>
+        }
         }} />
 
         <Route exact path="/category/CategoryManager" render={(props) => {
-          return <CategoryManager
+          if (this.props.isAuthenticated()) {
+            return <CategoryManager
                     updateExistingCategory={this.updateExistingCategory}
                     {...props}
                   />
+        } else {
+            return <Login {...this.props}/>
+        }
         }} />
 
         <Route exact path="/category/:categoryId(\d+)/CategoryEdit" render={(props) => {
-          return <CategoryEdit
+          if (this.props.isAuthenticated()) {
+            return <CategoryEdit
                     updateExistingCategory={this.updateExistingCategory}
                     deleteCategory={this.deleteCategory}
                     categoryId={parseInt(props.match.params.categoryId)}
                     {...props}
                   />
+        } else {
+            return <Login {...this.props}/>
+        }
         }} />
 
       </React.Fragment>
