@@ -9,9 +9,9 @@ class Flashcard extends Component {
     <div className="card" onClick= {() =>
       { this.props.history.push(`/flashcard/${this.props.id}`)}
       }>
-        <div className="w3-card">
+        <div className="w3-panel w3-margin w3-card-2 w3-left">
           <input type="checkbox" name={`flashcard${this.props.id}`} value=""></input>
-          <span>{this.props.word}</span>
+          <h1>    {this.props.word}</h1>
         </div>
       </div>
     );

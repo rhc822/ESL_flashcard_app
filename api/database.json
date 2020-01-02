@@ -37,7 +37,7 @@
     {
       "id": 3,
       "userId": 1,
-      "word": "banana",
+      "word": "Banana",
       "sentence": "Bananas are nice",
       "url": "www.goingbananas.com",
       "definition": "A long, yellow fruit that monkeys like.",
@@ -46,9 +46,9 @@
   ],
   "category": [
     {
+      "name": "Food",
       "id": 2,
-      "userId": 1,
-      "name": "food"
+      "userId": 1
     },
     {
       "id": 3,
