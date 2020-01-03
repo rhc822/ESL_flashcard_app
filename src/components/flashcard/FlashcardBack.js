@@ -32,25 +32,32 @@ class FlashcardBack extends Component {
       console.log(this.props)
       return (
         <>
+          <div className="w3-panel w3-margin w3-card-2 w3-center w3-display-middle">
             <h1>{this.state.word}</h1>
-            <p><strong>Sentence: </strong>{this.state.sentence}</p>
-            <p><strong>Website: </strong>{this.state.url}</p>
-            <p><strong>Definition: </strong>{this.state.definition}</p>
+            <div className="w3-left-align">
+              <p><strong>Sentence: </strong>{this.state.sentence}</p>
+              <p><strong>Website: </strong>{this.state.url}</p>
+              <p><strong>Definition: </strong>{this.state.definition}</p>
+            </div>
             <button
-                type="button"
-                onClick={() => { this.props.history.push(`/flashcard/${this.props.flashcardId}/FlashcardEdit`) }}
-            >Edit
+              className="w3-margin"
+              type="button"
+              onClick={() => { this.props.history.push(`/flashcard/${this.props.flashcardId}/FlashcardEdit`) }}>
+                Edit
             </button>
             <button
-                type="button"
-                onClick={() => this.props.deleteFlashcard(this.props.flashcardId)}
-            >Delete
+              className="w3-margin"
+              type="button"
+              onClick={() => this.props.deleteFlashcard(this.props.flashcardId)}>
+                Delete
             </button>
+            <br />
             <Link
-            className="card-flip"
-            to={`/flashcard/${this.props.flashcardId}`}
-            >Flip
+              className="card-flip"
+              to={`/flashcard/${this.props.flashcardId}`}>
+                Flip
             </Link>
+          </div>
         </>
 
     );
