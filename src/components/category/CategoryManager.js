@@ -56,36 +56,28 @@ handleFieldChange = evt => {
   render() {
       return (
         <>
-            <form id="categoryForm">
-                <fieldset>
-                    <div>
-                        <label htmlFor="name">Create a category name</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="name"
-                            placeholder="Category Name"/>
-                    </div>
-                    <br />
-                    <div className="categoryNewSubmitButton">
-                        <button
-                            onClick={this.constructNewCategory}
-                        >
-                            Submit
-                        </button>
-                    </div>
-                </fieldset>
+            <form className="w3-container w3-center" id="categoryForm">
+                <label className="w3-left w3-margin" htmlFor="name"><strong>Create a category name: </strong></label>
+                <input
+                  className="w3-left w3-margin"
+                  type="text"
+                  required
+                  onChange={this.handleFieldChange}
+                  id="name"
+                  placeholder="Category Name"/>
+              <button
+              style={{width: "75%"}}
+              className="w3-margin w3-button w3-round w3-black w3-center w3-block"
+              onClick={this.constructNewCategory}>
+                Submit
+            </button>
             </form>
             <hr />
             <div>
             {this.state.category.map(eachCategory => {
                 return <>
-                    <input
-                        type="checkbox"
-                        name={`categoryId-${eachCategory.id}`}
-                    />
                     <Link
+                        className="w3-bar-item w3-margin w3-xlarge"
                         to={`/category/${eachCategory.id}/CategoryEdit`}
                         {...this.props}
                     ><span>{eachCategory.name}</span>

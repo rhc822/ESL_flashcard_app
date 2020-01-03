@@ -116,10 +116,8 @@ handleFieldChange = evt => {
                                 </option>
                         )}
                         </select>
-                    </div>
-                    <div>
                         <button
-                          className="w3-margin w3-button w3-round w3-black w3-left"
+                          className=" w3-block w3-margin w3-button w3-round w3-black w3-center"
                           type="button"
                           onClick={this.constructNewFlashcard}
                           disabled={this.state.loadingStatus}>

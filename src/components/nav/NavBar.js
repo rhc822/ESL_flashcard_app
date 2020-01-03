@@ -64,13 +64,13 @@ class NavBar extends Component {
         {(this.props.isAuthenticated()) ?
             <nav className="w3-black w3-xlarge w3-display-container">
               <div className="w3-center">
-              <Link to="/" className="w3-bar-item w3-button w3-mobile"><i className="fas fa-home"></i>
+              <Link to="/" className="w3-bar-item w3-button"><i className="fas fa-home w3-margin-right"></i>
                 Home
               </Link>
-              <Link className="w3-bar-item w3-button w3-mobile" to="/flashcard/create"><i className="far fa-file-alt"></i>
+              <Link className="w3-bar-item w3-button" to="/flashcard/create"><i className="far fa-file-alt w3-margin-right"></i>
                 Create Flashcard
               </Link>
-              <Link className="w3-bar-item w3-button w3-mobile" to="/category/CategoryManager"><i className="fas fa-sitemap"></i>
+              <Link className="w3-bar-item w3-button" to="/category/CategoryManager"><i className="fas fa-sitemap w3-margin-right"></i>
                 Category Manager
               </Link>
               </div>

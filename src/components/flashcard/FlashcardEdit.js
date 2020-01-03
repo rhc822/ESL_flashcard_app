@@ -68,7 +68,7 @@ handleSubmit = () => {
   render() {
       return (
         <>
-            <div className="w3-display-container w3-panel w3-margin w3-card-2 w3-center w3-display-middle">
+            <div className="w3-container w3-panel w3-margin w3-card-2 w3-center w3-display-middle">
                 <form>
                     <fieldset>
                         <div>
@@ -125,10 +125,8 @@ handleSubmit = () => {
                                         </option>
                                     )}
                             </select>
-                        </div>
-                        <div>
                             <button
-                                className="w3-margin w3-button w3-round w3-black w3-left"
+                                className="w3-margin w3-button w3-round w3-black w3-center w3-block"
                                 type="button"
                                 onClick={this.handleSubmit}
                                 disabled={this.state.loadingStatus}>

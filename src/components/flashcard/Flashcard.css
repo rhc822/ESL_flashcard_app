@@ -7,6 +7,10 @@ input[type="checkbox"] {
     top: -7px;
 }
 
+#name {
+    display: block;
+}
+
 /* input.defHeight {
     height: 300px;
     word-wrap: normal;
