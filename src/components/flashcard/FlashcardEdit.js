@@ -71,67 +71,70 @@ handleSubmit = () => {
             <div className="w3-display-container w3-panel w3-margin w3-card-2 w3-center w3-display-middle">
                 <form>
                     <fieldset>
-                        <label htmlFor="word"></label>
-                        <h1><input
-                            type="text"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="word"
-                            placeholder="Word"
-                            value={this.state.word}/></h1>
-                        <br />
-                        <label className="w3-left w3-margin" htmlFor="sentence"><strong>Sentence: </strong></label>
-                        <input
-                            className="w3-margin w3-left"
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="sentence"
-                            placeholder="Sentence"
-                            value={this.state.sentence}/>
-                        <br />
-                        <label className="w3-left w3-margin" htmlFor="url"><strong>Website: </strong></label>
-                        <input
-                            className="w3-margin w3-left"
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="url"
-                            placeholder="URL"
-                            value={this.state.url}/>
-                        <br />
-                        <label className="w3-left w3-margin" htmlFor="definition"><strong>Definition: </strong></label>
-                        <textarea
-                            className="w3-margin w3-left"
-                            rows="5"
-                            cols="40"
-                            type="text"
-                            onChange={this.handleFieldChange}
-                            id="definition"
-                            placeholder="Enter the definition"
-                            value={this.state.definition}/>
-                        <br />
-                        <label className="form-control w3-left w3-margin" htmlFor="category"><strong>Category: </strong></label>
-                        <select
-                            className="form-control w3-margin w3-left"
-                            onChange={this.handleFieldChange}
-                            id="categoryId"
-                            value={this.state.categoryId}>
-                                {this.state.category.map(eachCategory =>
-                                    <option
-                                        key={eachCategory.id}
-                                        value={eachCategory.id}
-                                    >
-                                        {`${eachCategory.name}`}
-                                    </option>
-                                )}
-                        </select>
-                        <br />
-                        <button
-                            type="button"
-                            className="w3-margin w3-button w3-round w3-black w3-left"
-                            onClick={this.handleSubmit}
-                            disabled={this.state.loadingStatus}>
-                                Submit
-                        </button>
+                        <div>
+                            <label htmlFor="word"></label>
+                            <h1><input
+                                type="text"
+                                required
+                                onChange={this.handleFieldChange}
+                                id="word"
+                                placeholder="Word"
+                                value={this.state.word}/></h1>
+                            <br />
+                            <label className="w3-left w3-margin" htmlFor="sentence"><strong>Sentence: </strong></label>
+                            <input
+                                className="w3-margin w3-left"
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="sentence"
+                                placeholder="Sentence"
+                                value={this.state.sentence}/>
+                            <br />
+                            <label className="w3-left w3-margin" htmlFor="url"><strong>Website: </strong></label>
+                            <input
+                                className="w3-margin w3-left"
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="url"
+                                placeholder="URL"
+                                value={this.state.url}/>
+                            <br />
+                            <label className="w3-left w3-margin" htmlFor="definition"><strong>Definition: </strong></label>
+                            <textarea
+                                className="w3-margin w3-left"
+                                rows="5"
+                                cols="40"
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="definition"
+                                placeholder="Enter the definition"
+                                value={this.state.definition}/>
+                            <br />
+                            <label className="form-control w3-left w3-margin" htmlFor="category"><strong>Category: </strong></label>
+                            <select
+                                className="form-control w3-margin w3-left"
+                                onChange={this.handleFieldChange}
+                                id="categoryId"
+                                value={this.state.categoryId}>
+                                    {this.state.category.map(eachCategory =>
+                                        <option
+                                            key={eachCategory.id}
+                                            value={eachCategory.id}
+                                        >
+                                            {`${eachCategory.name}`}
+                                        </option>
+                                    )}
+                            </select>
+                        </div>
+                        <div>
+                            <button
+                                className="w3-margin w3-button w3-round w3-black w3-left"
+                                type="button"
+                                onClick={this.handleSubmit}
+                                disabled={this.state.loadingStatus}>
+                                    Submit
+                            </button>
+                        </div>
                     </fieldset>
                 </form>
             </div>
