@@ -40,13 +40,13 @@ class FlashcardBack extends Component {
               <p><strong>Definition: </strong>{this.state.definition}</p>
             </div>
             <button
-              className="w3-margin"
+              className="w3-margin w3-button w3-round w3-black"
               type="button"
               onClick={() => { this.props.history.push(`/flashcard/${this.props.flashcardId}/FlashcardEdit`) }}>
                 Edit
             </button>
             <button
-              className="w3-margin"
+              className="w3-margin w3-button w3-round w3-black"
               type="button"
               onClick={() => this.props.deleteFlashcard(this.props.flashcardId)}>
                 Delete

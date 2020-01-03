@@ -7,9 +7,20 @@ input[type="checkbox"] {
     top: -7px;
 }
 
+/* input.defHeight {
+    height: 300px;
+    word-wrap: normal;
+} */
+
 button {
     width: 75px;
 }
+
+fieldset {
+    border: none;
+}
+
+
 /* .card { */
     /* Add shadows to create the "card" effect */
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
