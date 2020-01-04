@@ -68,51 +68,71 @@ handleSubmit = () => {
   render() {
       return (
         <>
-            <div className="w3-container w3-panel w3-margin w3-card-2 w3-center w3-display-middle">
-                <form>
-                    <fieldset>
-                        <div>
-                            <label htmlFor="word"></label>
-                            <h1><input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="word"
-                                placeholder="Word"
-                                value={this.state.word}/></h1>
-                            <br />
-                            <label className="w3-left w3-margin" htmlFor="sentence"><strong>Sentence: </strong></label>
-                            <input
-                                className="w3-margin w3-left"
-                                type="text"
-                                onChange={this.handleFieldChange}
-                                id="sentence"
-                                placeholder="Sentence"
-                                value={this.state.sentence}/>
-                            <br />
-                            <label className="w3-left w3-margin" htmlFor="url"><strong>Website: </strong></label>
-                            <input
-                                className="w3-margin w3-left"
-                                type="text"
-                                onChange={this.handleFieldChange}
-                                id="url"
-                                placeholder="URL"
-                                value={this.state.url}/>
-                            <br />
-                            <label className="w3-left w3-margin" htmlFor="definition"><strong>Definition: </strong></label>
-                            <textarea
-                                className="w3-margin w3-left"
-                                rows="5"
-                                cols="40"
-                                type="text"
-                                onChange={this.handleFieldChange}
-                                id="definition"
-                                placeholder="Enter the definition"
-                                value={this.state.definition}/>
-                            <br />
-                            <label className="form-control w3-left w3-margin" htmlFor="category"><strong>Category: </strong></label>
+            <form className="w3-card-2 w3-display-middle">
+                <fieldset>
+                    <div>
+                        <label htmlFor="word"></label>
+                        <h1><input
+                            type="text"
+                            required
+                            onChange={this.handleFieldChange}
+                            id="word"
+                            placeholder="Word"
+                            value={this.state.word}/></h1>
+                        <br />
+                        <label
+                            className="w3-block w3-margin-top"
+                            htmlFor="sentence">
+                                <strong>Sentence: </strong>
+                        </label>
+                        <textarea
+                            rows="2"
+                            cols="40"
+                            className="w3-block"
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="sentence"
+                            placeholder="Sentence"
+                            value={this.state.sentence}/>
+                        <br />
+                        <label
+                            className="w3-block"
+                            htmlFor="url">
+                                <strong>Website: </strong>
+                        </label>
+                        <textarea
+                            rows="2"
+                            cols="40"
+                            className="w3-block"
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="url"
+                            placeholder="URL"
+                            value={this.state.url}/>
+                        <br />
+                        <label
+                            className="w3-block"
+                            htmlFor="definition">
+                                <strong>Definition: </strong>
+                        </label>
+                        <textarea
+                            className="w3-block"
+                            rows="5"
+                            cols="40"
+                            type="text"
+                            onChange={this.handleFieldChange}
+                            id="definition"
+                            placeholder="Enter the definition"
+                            value={this.state.definition}/>
+                        <br />
+                        <div className="w3-center">
+                            <label
+                                className="form-control w3-margin-right w3-margin-bottom w3-center"
+                                htmlFor="category">
+                                    <strong>Category: </strong>
+                            </label>
                             <select
-                                className="form-control w3-margin w3-left"
+                                className="form-control w3-center w3-margin-bottom"
                                 onChange={this.handleFieldChange}
                                 id="categoryId"
                                 value={this.state.categoryId}>
@@ -125,17 +145,17 @@ handleSubmit = () => {
                                         </option>
                                     )}
                             </select>
-                            <button
-                                className="w3-margin w3-button w3-round w3-black w3-center w3-block"
-                                type="button"
-                                onClick={this.handleSubmit}
-                                disabled={this.state.loadingStatus}>
-                                    Submit
-                            </button>
                         </div>
-                    </fieldset>
-                </form>
-            </div>
+                        <button
+                            className="w3-button w3-round w3-black w3-block w3-margin-bottom"
+                            type="button"
+                            onClick={this.handleSubmit}
+                            disabled={this.state.loadingStatus}>
+                                Submit
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
         </>
     );
   }

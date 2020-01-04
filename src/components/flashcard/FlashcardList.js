@@ -22,7 +22,7 @@ class FlashcardList extends Component {
 
   render() {
     return (
-      <div className="w3-container">
+      <div className="w3-container w3-center">
         {this.state.flashcard.map(eachFlashcard =>
             <Flashcard
                 key={eachFlashcard.id}

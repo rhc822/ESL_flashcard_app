@@ -28,12 +28,13 @@ I needed to put the key as an attribute in the section tag because that is only 
   render() {
     return (
       <React.Fragment>
-        <div className="w3-container">
+        <div className="w3-container w3-center">
           {this.state.category.map(eachCategory =>
             <>
               <section key={eachCategory.id}>
                   <h3>{eachCategory.name}</h3>
-                  <div>
+                  <hr/>
+                  <div className="w3-center">
                       <FlashcardList
                           categoryId={eachCategory.id}
                           {...this.props}

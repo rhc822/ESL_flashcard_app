@@ -62,11 +62,12 @@ handleFieldChange = evt => {
   render() {
       return (
         <>
-          <div className="w3-display-container w3-panel w3-margin w3-card-2 w3-center w3-display-middle">
-            <form>
+            <form className="w3-card-2 w3-display-middle">
                 <fieldset>
                     <div>
-                        <label htmlFor="word"></label>
+                        <label
+                          htmlFor="word">
+                        </label>
                         <h1><input
                             type="text"
                             required
@@ -74,25 +75,41 @@ handleFieldChange = evt => {
                             id="word"
                             placeholder="Word"/></h1>
                         <br />
-                        <label className="w3-left w3-margin" htmlFor="sentence"><strong>Sentence: </strong></label>
-                        <input
-                          className="w3-margin w3-left"
+                        <label
+                          className="w3-block w3-margin-top"
+                          htmlFor="sentence">
+                            <strong>Sentence: </strong>
+                        </label>
+                        <textarea
+                          rows="2"
+                          cols="40"
+                          className="w3-block"
                           type="text"
                           onChange={this.handleFieldChange}
                           id="sentence"
                           placeholder="Enter the sentence"/>
                         <br />
-                        <label className="w3-left w3-margin" htmlFor="url"><strong>Website: </strong></label>
-                        <input
-                          className="w3-margin w3-left"
+                        <label
+                          className="w3-block"
+                          htmlFor="url">
+                            <strong>Website: </strong>
+                        </label>
+                        <textarea
+                          rows="2"
+                          cols="40"
+                          className="w3-block"
                           type="text"
                           onChange={this.handleFieldChange}
                           id="url"
                           placeholder="Enter the URL"/>
                         <br />
-                        <label className="w3-left w3-margin" htmlFor="definition"><strong>Definition: </strong></label>
+                        <label
+                          className="w3-block"
+                          htmlFor="definition">
+                            <strong>Definition: </strong>
+                        </label>
                         <textarea
-                          className="w3-margin w3-left"
+                          className="w3-block"
                           rows="5"
                           cols="40"
                           type="text"
@@ -100,24 +117,30 @@ handleFieldChange = evt => {
                           id="definition"
                           placeholder="Enter the definition"/>
                         <br />
-                        <label className="form-control w3-left w3-margin" htmlFor="category"><strong>Category: </strong></label>
-                        <select
-                          className="form-control w3-margin w3-left"
-                          onChange={this.handleFieldChange}
-                          id="categoryId"
-                          value={this.state.categoryId}>
-                            <option>Select a category</option>
-                              {this.state.category.map(eachCategory =>
-                                <option
-                                    key={eachCategory.id}
-                                    value={eachCategory.id}
-                                >
-                                    {`${eachCategory.name}`}
-                                </option>
-                        )}
-                        </select>
+                        <div className="w3-center">
+                          <label
+                            className="form-control w3-margin-right w3-margin-bottom w3-center"
+                            htmlFor="category">
+                              <strong>Category: </strong>
+                          </label>
+                          <select
+                            className="form-control w3-center w3-margin-bottom"
+                            onChange={this.handleFieldChange}
+                            id="categoryId"
+                            value={this.state.categoryId}>
+                              <option>Select a category</option>
+                                {this.state.category.map(eachCategory =>
+                                  <option
+                                      key={eachCategory.id}
+                                      value={eachCategory.id}
+                                  >
+                                      {`${eachCategory.name}`}
+                                  </option>
+                          )}
+                          </select>
+                        </div>
                         <button
-                          className=" w3-block w3-margin w3-button w3-round w3-black w3-center"
+                          className="w3-button w3-round w3-black w3-block w3-margin-bottom"
                           type="button"
                           onClick={this.constructNewFlashcard}
                           disabled={this.state.loadingStatus}>
@@ -126,7 +149,6 @@ handleFieldChange = evt => {
                     </div>
                 </fieldset>
             </form>
-          </div>
         </>
     );
   }

@@ -59,12 +59,12 @@ handleFieldChange = evt => {
             <form className="w3-container w3-center" id="categoryForm">
               <div>
                 <label
-                  className="w3-margin"
+                  className="w3-margin w3-xlarge"
                   htmlFor="name">
                     <strong>Create a category name: </strong>
                 </label>
                 <input
-                  className="w3-margin"
+                  className="w3-margin w3-xlarge"
                   style={{display:"inline"}}
                   type="text"
                   required

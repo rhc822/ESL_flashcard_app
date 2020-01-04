@@ -65,7 +65,7 @@ handleFieldChange = evt => {
                 <label
                   className="w3-margin w3-xlarge"
                   htmlFor="name">
-                    Modify the category name:
+                    <strong>Modify the category name:</strong>
                 </label>
                 <input
                   className="w3-margin w3-xlarge"
