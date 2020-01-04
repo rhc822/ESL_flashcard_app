@@ -57,23 +57,29 @@ handleFieldChange = evt => {
       return (
         <>
             <form className="w3-container w3-center" id="categoryForm">
-                <label className="w3-left w3-margin" htmlFor="name"><strong>Create a category name: </strong></label>
+              <div>
+                <label
+                  className="w3-margin"
+                  htmlFor="name">
+                    <strong>Create a category name: </strong>
+                </label>
                 <input
-                  className="w3-left w3-margin"
+                  className="w3-margin"
+                  style={{display:"inline"}}
                   type="text"
                   required
                   onChange={this.handleFieldChange}
                   id="name"
                   placeholder="Category Name"/>
+              </div>
               <button
-              style={{width: "75%"}}
-              className="w3-margin w3-button w3-round w3-black w3-center w3-block"
-              onClick={this.constructNewCategory}>
-                Submit
-            </button>
+                className="w3-margin w3-button w3-round w3-black"
+                onClick={this.constructNewCategory}>
+                  Submit
+              </button>
             </form>
             <hr />
-            <div>
+            <div className="w3-container w3-center">
             {this.state.category.map(eachCategory => {
                 return <>
                     <Link

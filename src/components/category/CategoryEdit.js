@@ -60,33 +60,36 @@ handleFieldChange = evt => {
   render() {
       return (
         <>
-            <form onSubmit={this.editCategory}>
-                <fieldset>
-                    <div>
-                        <label htmlFor="name">Modify the category name</label>
-                        <input
-                            type="text"
-                            required
-                            onChange={this.handleFieldChange}
-                            id="name"
-                            placeholder="Category Name"
-                            value={this.state.name}
-                        />
-                    </div>
-                    <br />
-                    <button
-                        type="button"
-                        onClick={() => this.props.deleteCategory(this.props.categoryId)}>
-                            Delete
-                    </button>
-                    <div className="categoryNewSubmitButton">
-                        <button
-                            type="submit"
-                            disabled={this.state.loadingStatus}
-                        > Submit
-                        </button>
-                    </div>
-                </fieldset>
+            <form className="w3-container w3-center" onSubmit={this.editCategory}>
+              <div>
+                <label
+                  className="w3-margin w3-xlarge"
+                  htmlFor="name">
+                    Modify the category name:
+                </label>
+                <input
+                  className="w3-margin w3-xlarge"
+                  style={{display:"inline"}}
+                  type="text"
+                  required
+                  onChange={this.handleFieldChange}
+                  id="name"
+                  placeholder="Category Name"
+                  value={this.state.name}
+                />
+              </div>
+              <button
+                  className="w3-margin w3-button w3-round w3-black"
+                  type="button"
+                  onClick={() => this.props.deleteCategory(this.props.categoryId)}>
+                      Delete
+              </button>
+                  <button
+                      className="w3-margin w3-button w3-round w3-black"
+                      type="submit"
+                      disabled={this.state.loadingStatus}
+                  > Submit
+                  </button>
             </form>
         </>
     )}
