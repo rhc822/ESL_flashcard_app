@@ -1,5 +1,5 @@
 # ESL Flashcard App
-###### The modern, digital version of the traditional flashcard-style study method, geared towards English as a Second Language learners.
+##### The modern, digital version of the traditional flashcard-style study method, geared towards English as a Second Language learners.
 
 ## Setup: Follow these steps exactly
 
