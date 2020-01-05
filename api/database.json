@@ -42,6 +42,15 @@
       "url": "www.goingbananas.com/goodfoodforyoutoeat?=more+stuff+for+you+to+eat",
       "definition": "A long, yellow fruit that monkeys like. You'll really like these things. They are healthy and nice and good and really really really nice.",
       "categoryId": 2
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "word": "Orange",
+      "sentence": "Oranges, O oranges, how I love thee",
+      "url": "www.florida.com",
+      "definition": "a round juicy citrus fruit with a tough bright reddish-yellow rind.",
+      "categoryId": 2
     }
   ],
   "category": [
@@ -74,6 +83,11 @@
       "name": "testing2",
       "userId": 0,
       "id": 7
+    },
+    {
+      "name": "New stuff",
+      "id": 8,
+      "userId": 1
     }
   ]
 }
