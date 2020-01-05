@@ -7,8 +7,8 @@ Mastering a new language is more than mere understanding. A lot of work goes int
 
 ## Setup: Follow these steps exactly
 
-1. Create a local directory on your machine
-1. `cd` into that directory and clone this repository into it using `git clone` and the link to this repo (provided above)
+1. Clone this repository into it using `git clone` and the link to this repo (provided above)
+1. `cd` into that directory
 1. In the `api` directory, create a copy of the `database.json.example` and remove the .example extension.
 1. Run `npm install` and wait for all dependencies to be installed
 1. Run `npm start` to verify that installation was successful.
