@@ -7,10 +7,12 @@ Mastering a new language is more than mere understanding. A lot of work goes int
 
 ## Setup: Follow these steps exactly
 
-1. Clone this repository into it using `git clone` and the link to this repo (provided above)
-1. `cd` into that directory
-1. Run `npm install` and wait for all dependencies to be installed
+1. Clone this repository into it using `git clone` and the link to this repo (provided above).
+1. `cd` into that directory.
+1. Run `npm install` and wait for all dependencies to be installed.
 1. Run `npm start` to verify that installation was successful.
+1. If JSON server is not installed install it now with the `npm install -g json-server` command.
+1. Once JSON server is installed, in another terminal instance, navigate to the API folder and run JSON server using the following command `json-server -p 8088 -w database.json`.
 
 ## Built With...
 1. REACT
