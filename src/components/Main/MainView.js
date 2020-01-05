@@ -13,7 +13,7 @@ class MainView extends Component {
       }
 
       componentDidMount() {
-        AppData.getAllCategory()
+        AppData.getAllCategory(localStorage.getItem("userId"))
           .then((AppDataCategoryArray) => {
             this.setState({
               category: AppDataCategoryArray
@@ -28,14 +28,20 @@ I needed to put the key as an attribute in the section tag because that is only 
   render() {
     return (
       <React.Fragment>
-        <div className="container-category">
+        <div className="w3-container w3-center">
           {this.state.category.map(eachCategory =>
-            <section key={eachCategory.id}>
-                <h1>{eachCategory.name}</h1>
-                <div>
-                    <FlashcardList categoryId={eachCategory.id}/>
-                </div>
-            </section>
+            <>
+              <section key={eachCategory.id}>
+                  <h3>{eachCategory.name}</h3>
+                  <hr/>
+                  <div className="w3-center">
+                      <FlashcardList
+                          categoryId={eachCategory.id}
+                          {...this.props}
+                      />
+                  </div>
+              </section>
+            </>
             )}
         </div>
       </React.Fragment>

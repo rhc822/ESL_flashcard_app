@@ -2,14 +2,14 @@
   "user": [
     {
       "id": 1,
-      "email": "email",
+      "email": "email@email.com",
       "password": "password",
       "name": "John",
       "language": "English"
     },
     {
       "id": 2,
-      "email": "email2",
+      "email": "email2@email.com",
       "password": "password2",
       "name": "Jane",
       "language": "English"
@@ -19,50 +19,45 @@
     {
       "id": 1,
       "userId": 1,
-      "word": "apple",
-      "sentence": "Apples are good.",
+      "word": "Apple",
+      "sentence": "Apples are really delicious.",
       "url": "www.apples.com",
-      "categoryId": 1,
-      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider."
+      "definition": "the round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh. Many varieties have been developed as dessert or cooking fruit or for making cider.",
+      "categoryId": 2
     },
     {
-      "id": 2,
-      "userId": 2,
-      "word": "orange",
-      "sentence": "Oranges are good too.",
-      "url": "www.oranges.com",
-      "categoryId": 1,
-      "definition": "a round juicy citrus fruit with a tough bright reddish-yellow rind."
+      "word": "Airplane",
+      "sentence": "Airplanes fly.",
+      "url": "www.eyeinthesky.com",
+      "categoryId": 5,
+      "definition": "a powered flying vehicle with fixed wings and a weight greater than that of the air it displaces.",
+      "userId": 1,
+      "id": 2
     },
     {
       "id": 3,
       "userId": 1,
-      "word": "vehicle",
-      "sentence": "Everyone in America needs a vehicle.",
-      "url": "www.cars.com",
-      "categoryId": 2,
-      "definition": "a thing used for transporting people or goods, especially on land, such as a car, truck, or cart."
+      "word": "Banana",
+      "sentence": "Bananas are nice",
+      "url": "www.goingbananas.com/goodfoodforyoutoeat?=more+stuff+for+you+to+eat",
+      "definition": "A long, yellow fruit that monkeys like. You'll really like these things. They are healthy and nice and good and really really really nice.",
+      "categoryId": 2
     },
     {
       "id": 4,
-      "userId": 2,
-      "word": "yacht",
-      "sentence": "Only the rich have yachts.",
-      "url": "www.yachts.com",
-      "categoryId": 2,
-      "definition": "a medium-sized sailboat equipped for cruising or racing."
+      "userId": 1,
+      "word": "Orange",
+      "sentence": "Oranges, O oranges, how I love thee",
+      "url": "www.florida.com",
+      "definition": "a round juicy citrus fruit with a tough bright reddish-yellow rind.",
+      "categoryId": 2
     }
   ],
   "category": [
     {
-      "id": 1,
-      "userId": 1,
-      "name": "food"
-    },
-    {
+      "name": "Food",
       "id": 2,
-      "userId": 1,
-      "name": "transportation"
+      "userId": 1
     },
     {
       "id": 3,
@@ -73,6 +68,26 @@
       "id": 4,
       "userId": 2,
       "name": "transportation"
+    },
+    {
+      "name": "Transportation",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "name": "testing",
+      "userId": 0,
+      "id": 6
+    },
+    {
+      "name": "testing2",
+      "userId": 0,
+      "id": 7
+    },
+    {
+      "name": "New stuff",
+      "id": 8,
+      "userId": 1
     }
   ]
 }

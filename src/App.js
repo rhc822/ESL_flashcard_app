@@ -7,11 +7,19 @@ import ApplicationViews from './components/ApplicationView';
 
 class App extends Component {
 
+
+  // Check if credentials are in local storage (returns true/false)
+  isAuthenticated = () => localStorage.getItem("userId") !== null
+
 render() {
   return (
     <>
-      <NavBar />
-      <ApplicationViews />
+      <NavBar
+        isAuthenticated={this.isAuthenticated}
+      />
+      <ApplicationViews
+        isAuthenticated={this.isAuthenticated}
+      />
     </>
   )
 }

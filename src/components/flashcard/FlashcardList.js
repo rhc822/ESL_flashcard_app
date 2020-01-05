@@ -9,9 +9,8 @@ class FlashcardList extends Component {
   }
 
 
-
   componentDidMount() {
-    AppData.getFlashcard(this.props.categoryId)
+    AppData.getFlashcard(this.props.categoryId, localStorage.getItem("userId"))
       .then((AppDataFlashcardArray) => {
         this.setState({
           flashcard: AppDataFlashcardArray
@@ -19,18 +18,18 @@ class FlashcardList extends Component {
       })
   }
 
-  /* This section maps through the flashcard list and builds each flashcard with the flashcard  */
+  /* This section maps through the flashcard list and builds each flashcard with the flashcard */
 
   render() {
-    console.log("flashcardlist.js state stuff", this.state)
     return (
-      <div className="container-cards">
+      <div className="w3-container w3-center">
         {this.state.flashcard.map(eachFlashcard =>
             <Flashcard
                 key={eachFlashcard.id}
                 userId={eachFlashcard.userId}
                 word={eachFlashcard.word}
                 id={eachFlashcard.id}
+                {...this.props}
             />
         )}
       </div>
