@@ -11,7 +11,7 @@
 
 ## What is the ESL Flashcard App?
 
-Nutshell is a new product offering that you have been tasked with building. It's an app for people to use to organize their daily tasks, events, news article, friends, and chat messages.
+Mastering a new language is more than mere understanding. A lot of work goes into ingraining new words into a person’s lexicon. In addition, words themselves aren’t used in isolation. They’re embedded in a greater context of phrases and sentences. There’s no way around it: repetition is required before words are usable "on the fly". This app provides a way for learners to have a place to capture words and sentences they encounter on web pages into a flash card-like web app for easy review. They can then organize these cards into categories and practice testing themselves. 
 
 ## Built With...
 1. REACT
